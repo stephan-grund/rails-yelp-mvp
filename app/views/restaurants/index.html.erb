@@ -1,0 +1,18 @@
+<div class="container">
+
+  <h1 class="m-3">Our restaurants</h1>
+
+  <div class="m-2">
+    <%= link_to "Create a restaurant", new_restaurant_path, class: "btn btn-primary"  %>
+  </div>
+
+  <ul class="list-unstyled m-4">
+    <% @restaurants.each do |restaurant| %>
+      <li>
+        <%= link_to restaurant.name, restaurant %>
+        <%= link_to "☠️", restaurant_path(restaurant), method: :delete, data: { confirm: "Really?"} %>
+      </li>
+    <% end %>
+  </ul>
+
+</div>

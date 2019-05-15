@@ -1,0 +1,29 @@
+
+<div class="container">
+
+  <h1 class="m-3">Details regarding <%= @restaurant.name %></h1>
+
+  <ul>
+      <li><%=  @restaurant.address %></li>
+      <li><%= @restaurant.category %></li>
+  </ul>
+
+   <ul>
+    <% @restaurant.reviews.each do |review| %>
+      <li> <%= review.content %> -- <%= review.rating %></li>
+    <% end %>
+  </ul>
+
+  <div>
+    <%= link_to "Edit restaurant", edit_restaurant_path %>
+  </div>
+
+  <div>
+    <%= link_to "Create a review", new_restaurant_review_path(@restaurant) %>
+  </div>
+
+    <div>
+    <%= link_to "Back to overview", restaurants_path %>
+    </div>
+
+</div>

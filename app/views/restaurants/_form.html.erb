@@ -1,0 +1,7 @@
+<%= simple_form_for(@restaurant) do |f| %>
+  <%= f.input :name, label: "Restaurant Name", placeholder: "McDonald's" %>
+  <%= f.input :address, label: "Address", placeholder: "Checkpoint Charlie 123, 10189 Berlin, Germany" %>
+    <%= f.input :phone_number, label: "+49 123 4848484", placeholder: "Phone number" %>
+  <%= f.input :category, collection: %w[chinese italian japanese french belgian] %>
+  <%= f.submit class: "btn btn-primary", data: { disable_with: "Creating..." } %>
+<% end %>
